@@ -22,6 +22,73 @@ public class PlayerLinkedList {
         System.out.println("Null");
     }
 
+    public void printCount() {
+        int i = 0;
+        PlayerNode temp = head.getNextPlayer();
+        temp = head;
+        while(temp != null){
+            i++;
+            temp = temp.getNextPlayer();
+        }
+
+        System.out.println("Number of objects: ");
+        System.out.println(i);
+
+    }
 
 
+    public void remove(Player player){
+        PlayerNode current = head;
+        PlayerNode previous = null;
+        PlayerNode tempPlayer = null;
+        PlayerNode tempNextPlayer = null;
+
+        if(current != null) {
+
+
+            while(current.getNextPlayer() != null) {
+                if (current.getPlayer() == player) {
+                    tempNextPlayer = current.getNextPlayer();
+                    current.setPlayer(tempNextPlayer.getPlayer());
+                    current.setNextPlayer(tempNextPlayer.getNextPlayer());
+
+                    break;
+                }
+                else
+                {
+                    if(current.getNextPlayer() != null) {
+                        current = current.getNextPlayer();
+                    }
+                }
+            }
+
+
+
+        }
+        else
+        {
+            return;
+
+        }
+    }
+
+    public void removeHead() {
+        PlayerNode current = head;
+        PlayerNode previous = null;
+        PlayerNode tempPlayer = null;
+        PlayerNode tempNextPlayer = null;
+
+        if (current != null) {
+
+            tempNextPlayer = current.getNextPlayer();
+            current.setPlayer(tempNextPlayer.getPlayer());
+            current.setNextPlayer(tempNextPlayer.getNextPlayer());
+
+        }
+        else {
+            return;
+        }
+
+
+    }
 }
