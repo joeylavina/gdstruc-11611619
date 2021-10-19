@@ -31,7 +31,7 @@ public class PlayerLinkedList {
             temp = temp.getNextPlayer();
         }
 
-        System.out.println("Number of objects: ");
+        System.out.println("Number of players: ");
         System.out.println(i);
 
     }
